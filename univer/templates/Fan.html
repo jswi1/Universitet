@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fanlar</title>
+</head>
+<body>
+    <h1>Fanlar</h1>
+    <br>
+    <form>
+        <input type="text" name="qidirish" placeholder="Fan nomi">
+        <button>Qidirish</button>
+    </form>
+    <br>
+    {% for i in fanlar %}
+    <h1>{{i}}</h1>
+    <button><a href="/Fan/{{i.id}}/"> Ochirish </a></button>
+    <button><a href="/science-edit/{{i.id}}/"> Tahrirlash </a></button>
+    {%endfor%}
+    <br>
+    <br>
+    <form method="post" action="/fanlar/">{% csrf_token %}
+        <input type="text" name="n" placeholder="Fan nomi">
+        <select name="u">
+            {% for i in  %}
+            <option value="{{i.id}}">{{i.ism}}</option>
+            {% endfor %}
+        </select>
+        <button type="Submit">Qo'shish</button>
+    </form>
+    <br>
+</body>
+</html>

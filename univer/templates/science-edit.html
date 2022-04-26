@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fan tahrirlash</title>
+</head>
+<body>
+    <h1>Fanni tahrirlang</h1>
+    <br>
+    <br>
+    <br>
+    <form method="post" action="/science-edit/{{fan.id}}/">{% csrf_token %}
+        <input type="text" name="n" placeholder="Fan.nomi">
+        <select name="ustoz">
+            <option value="{{fan.ustoz.id}}">{{fan.ustoz}}</option>
+            {% for i in ustoz %}
+            {% if i.id != fan.ustoz.id %}
+            <option value="{{i.id}}"></option>
+            {% endif %}
+            {% endfor %}
+        </select>
+        <button type="submit">Qo'shish</button>
+    </form>
+    <br>
+    <br>
+</body>
+</html>

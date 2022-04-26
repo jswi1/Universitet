@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yonalish tahrirlang</title>
+</head>
+<body>
+    <h1>Yonalishni tahrirlang</h1>
+    <br>
+    <br>
+    <form method="post" action="/yonalish-edit/{{yonalish.id}}/">{% csrf_token %}
+        <input type="text" name="nomi" placeholder="Yonalish nomi">
+        <input type="number" name="code" placeholder="Yonalish codi">
+        <input type="date" name="s_d" placeholder="Start_Date">
+        <input type="checkbox" name="i_a" placeholder="False">
+        <button type="submit">Qo'shish</button>
+    </form>
+    <br>
+</body>
+</html>
